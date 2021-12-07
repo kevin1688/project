@@ -7,14 +7,42 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct Stars: View {
+    
+    @Binding var pointNumber:Int
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            ForEach(0..<5) { number in
+                star(number:number,pointNumber:$pointNumber)
+            }
+        }
+    }
+    
+    
+}
+
+struct star:View {
+    @State var number = 0
+    @Binding var pointNumber:Int
+    
+    var body: some View {
+        ZStack{
+            Image(systemName: number <= pointNumber ? "star.fill": "star")
+                .resizable()
+                .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .foregroundColor(.yellow)
+                
+        }
+        .onTapGesture {
+            pointNumber = number
+        }
+        
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
+struct Stars_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUIView()
+        Stars(pointNumber: .constant(0))
     }
 }
