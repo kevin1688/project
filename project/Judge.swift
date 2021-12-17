@@ -17,7 +17,6 @@ struct judge: View {
     
     var body: some View {
         VStack {
-            Text("我按了幾顆星\(stars + 1)")
             ZStack{
                 Rectangle()
                     .frame(width: 400, height: 800, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -49,6 +48,13 @@ struct judge: View {
                     .padding(.top,650)
                 Stars(pointNumber: $stars)
                 .padding(.top,640)
+            }
+            HStack{
+            Image(systemName: "star")
+                .resizable()
+                .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            Text("\(stars + 1)")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             }
         }
     }

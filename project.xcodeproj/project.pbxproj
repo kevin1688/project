@@ -13,6 +13,7 @@
 		E2834BDA2759B7EA00C97AC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2834BD92759B7EA00C97AC1 /* Assets.xcassets */; };
 		E2834BDD2759B7EA00C97AC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2834BDC2759B7EA00C97AC1 /* Preview Assets.xcassets */; };
 		E2834BEC275A4C0D00C97AC1 /* star.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2834BEB275A4C0D00C97AC1 /* star.swift */; };
+		E2953545276C321800E27AF6 /* discount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2953544276C321800E27AF6 /* discount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E2834BDC2759B7EA00C97AC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E2834BDE2759B7EA00C97AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2834BEB275A4C0D00C97AC1 /* star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = star.swift; sourceTree = "<group>"; };
+		E2953544276C321800E27AF6 /* discount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = discount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				E2834BEB275A4C0D00C97AC1 /* star.swift */,
 				E2834BD72759B7DE00C97AC1 /* ContentView.swift */,
 				668F62C8275F96BF00DA4871 /* Judge.swift */,
+				E2953544276C321800E27AF6 /* discount.swift */,
 				E2834BD92759B7EA00C97AC1 /* Assets.xcassets */,
 				E2834BDE2759B7EA00C97AC1 /* Info.plist */,
 				E2834BDB2759B7EA00C97AC1 /* Preview Content */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2953545276C321800E27AF6 /* discount.swift in Sources */,
 				E2834BD82759B7DE00C97AC1 /* ContentView.swift in Sources */,
 				668F62C9275F96BF00DA4871 /* Judge.swift in Sources */,
 				E2834BD62759B7DE00C97AC1 /* projectApp.swift in Sources */,
