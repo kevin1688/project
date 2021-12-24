@@ -10,11 +10,13 @@ import SwiftUI
 struct Stars: View {
     
     @Binding var pointNumber:Int
+    @Binding var tempNumber:Int
     
     var body: some View {
         HStack{
-            ForEach(0..<5) { number in
-                star(number:number,pointNumber:$pointNumber)
+            ForEach(1..<6) { number in
+                star(number: number, tempNumber: $tempNumber, pointNumber: $pointNumber)
+                
             }
         }
     }
@@ -23,19 +25,40 @@ struct Stars: View {
 }
 
 struct star:View {
-    @State var number = 0
+    @State var number:Int = 0
+    @Binding var tempNumber:Int
     @Binding var pointNumber:Int
     
     var body: some View {
-        ZStack{
-            Image(systemName: number <= pointNumber ? "star.fill": "star")
-                .resizable()
-                .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .foregroundColor(.yellow)
-                
+        VStack {
+            Text("number:\(number)")
+            Text("tN:\(tempNumber)")
+            Text("pN:\(pointNumber)")
+            ZStack{
+                Image(systemName: "star.leadinghalf.filled")
+                    .resizable()
+                    .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.yellow)
+                    .opacity((tempNumber > 0) && (pointNumber == number) ? 1.0 : 0.0)
+                Image(systemName:(tempNumber == 0) && (number <= pointNumber) ? "star.fill": "star")
+                    .resizable()
+                    .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.yellow)
+                Image(systemName: (tempNumber > number) && (pointNumber != number) ? "star.fill": "star")
+                    .resizable()
+                    .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.yellow)
+                    
+            }
+            .onTapGesture {
+                pointNumber = number
+                if tempNumber == 0 {
+                    tempNumber = number + 1
+                    //pointNumber += 1
+                }else{
+                    tempNumber = 0
+                }
         }
-        .onTapGesture {
-            pointNumber = number
         }
         
     }
@@ -43,6 +66,6 @@ struct star:View {
 
 struct Stars_Previews: PreviewProvider {
     static var previews: some View {
-        Stars(pointNumber: .constant(0))
+        Stars(pointNumber: .constant(0), tempNumber: .constant(0))
     }
 }

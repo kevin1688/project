@@ -12,12 +12,14 @@ struct judge: View {
     @State var onOff = false
     
     @State var stars = 0
+    @State var tempStars = 0
+    
     @State var title = "阿寶"
     @State var img = "04"
     
     var body: some View {
         VStack {
-            Text("我按了幾顆星\(stars + 1)")
+            Text("分數\(stars*2)")
             ZStack{
                 Rectangle()
                     .frame(width: 400, height: 800, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -47,7 +49,7 @@ struct judge: View {
                     .frame(width: 400, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color("CentorGreen"))
                     .padding(.top,650)
-                Stars(pointNumber: $stars)
+                Stars(pointNumber: $stars, tempNumber: $tempStars)
                 .padding(.top,640)
             }
         }
