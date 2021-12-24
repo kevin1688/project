@@ -19,7 +19,7 @@ struct judge: View {
     
     var body: some View {
         VStack {
-            Text("分數\(stars*2)")
+            Text("分數\(tempStars == 0 ? Float(stars) : Float(stars) + 0.5 - 1)")
             ZStack{
                 Rectangle()
                     .frame(width: 400, height: 800, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
