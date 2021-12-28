@@ -12,14 +12,15 @@ struct judge: View {
     @State var onOff = false
     
     @State var stars = 0
-    @State var title = "阿寶"
-    @State var img = "04"
+    @State var title = "麥當勞"
+    @State var img = "19"
+    @State var tempStars = 0
     
     var body: some View {
         VStack {
             ZStack{
                 Rectangle()
-                    .frame(width: 400, height: 800, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(width: 420, height: 900, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color("Green"))
                 Rectangle()
                     .frame(width: 400, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -46,16 +47,18 @@ struct judge: View {
                     .frame(width: 400, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color("CentorGreen"))
                     .padding(.top,650)
-                Stars(pointNumber: $stars)
+                Stars(pointNumber: $stars, tempNumber: $tempStars)
                 .padding(.top,640)
+                HStack{
+                Image(systemName: "star")
+                    .resizable()
+                    .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Text("\(tempStars == 0 ? Float(stars) : Float(stars) + 0.5 - 1)")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                }
+                .padding(.top,790)
             }
-            HStack{
-            Image(systemName: "star")
-                .resizable()
-                .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Text("\(stars + 1)")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            }
+            
         }
     }
 }
