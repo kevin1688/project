@@ -11,11 +11,13 @@ struct Stars: View {
     
     @Binding var pointNumber:Int
     @Binding var tempNumber:Int
-    
+    @Binding var currectNumber:Float
     var body: some View {
         HStack{
             ForEach(1..<6) { number in
-                star(number: number, tempNumber: $tempNumber, pointNumber: $pointNumber)
+                star(number: number, tempNumber: $tempNumber, pointNumber: $pointNumber,
+                    currectNumber: $currectNumber
+                )
                 
             }
         }
@@ -28,6 +30,8 @@ struct star:View {
     @State var number:Int = 0
     @Binding var tempNumber:Int
     @Binding var pointNumber:Int
+    
+    @Binding var currectNumber:Float
     
     var body: some View {
         VStack {
@@ -58,6 +62,8 @@ struct star:View {
                 }else{
                     tempNumber = 0
                 }
+                
+                currectNumber = tempNumber == 0 ? Float(pointNumber) : Float(pointNumber) + 0.5 - 1
         }
         }
         
@@ -66,6 +72,6 @@ struct star:View {
 
 struct Stars_Previews: PreviewProvider {
     static var previews: some View {
-        Stars(pointNumber: .constant(0), tempNumber: .constant(0))
+        Stars(pointNumber: .constant(0), tempNumber: .constant(0), currectNumber: .constant(0.0))
     }
 }

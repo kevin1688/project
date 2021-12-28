@@ -17,9 +17,11 @@ struct judge: View {
     @State var title = "阿寶"
     @State var img = "04"
     
+    @State var currect:Float = 0.0
+    
     var body: some View {
         VStack {
-            Text("分數\(tempStars == 0 ? Float(stars) : Float(stars) + 0.5 - 1)")
+            Text("分數\(currect)")
             ZStack{
                 Rectangle()
                     .frame(width: 400, height: 800, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -49,7 +51,9 @@ struct judge: View {
                     .frame(width: 400, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color("CentorGreen"))
                     .padding(.top,650)
-                Stars(pointNumber: $stars, tempNumber: $tempStars)
+                Stars(pointNumber: $stars, tempNumber: $tempStars,
+                      currectNumber:$currect
+                )
                 .padding(.top,640)
             }
         }
