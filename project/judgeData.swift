@@ -15,7 +15,7 @@ struct JG :Identifiable,Hashable,Codable {
 struct DTJG:Identifiable,Hashable,Codable {
     var id = UUID().uuidString
     var JG:JG
-    var tempStars:Int
+    var tempStars:Float
 }
 
 struct DT:Identifiable,Hashable,Codable {
@@ -34,7 +34,9 @@ class JGData: ObservableObject {
             JG(title: "肯德基"),
         ]
         DTJGS = [
-            DTJG(JG: JG(title: "apple"), tempStars: 1)
+            DTJG(JG: JG(title: "麥當勞"), tempStars: 4.5),
+            DTJG(JG: JG(title: "麥當勞"), tempStars: 3.5),
+            DTJG(JG: JG(title: "麥當勞"), tempStars: 5.0)
         ]
         DTS = [
             DT(onDT: DTJGS)

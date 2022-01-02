@@ -10,8 +10,8 @@ import SwiftUI
 struct allJudge: View {
     
     @State var DataJG = [
-        DTJG(JG: JG(title: "麥當勞"), tempStars: 5),
-        DTJG(JG: JG(title: "阿寶"), tempStars: 4)
+        DTJG(JG: JG(title: "麥當勞"), tempStars: 5.0),
+        DTJG(JG: JG(title: "阿寶"), tempStars: 4.5)
     ]
     var body: some View {
         ZStack {
@@ -30,15 +30,15 @@ struct allJudge: View {
                         HStack {               Text("\(allJG.JG.title)")
                                 .scaleEffect(2.5)
                                 .foregroundColor(.black)
-                                .frame(width: 200,height: 50)
+                                .frame(width: 180,height: 50)
                             .padding()
                             .background(Color("DarkGreen"))
                             .cornerRadius(18)
                             
                         Text("\(allJG.tempStars)")
-                                .scaleEffect(3)
+                                .scaleEffect(2.5)
                                 .foregroundColor(.white)
-                                .frame(width: 100, height: 80, alignment: .center)
+                                .frame(width: 200, height: 80, alignment: .center)
                                 .background(Color("CentorGreen"))
                                 .cornerRadius(16)
                         }
