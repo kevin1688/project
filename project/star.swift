@@ -33,9 +33,6 @@ struct star:View {
     
     var body: some View {
         VStack {
-            Text("number:\(number)")
-            Text("tN:\(tempNumber)")
-            Text("pN:\(pointNumber)")
             ZStack{
                 Image(systemName: "star.leadinghalf.filled")
                     .resizable()
