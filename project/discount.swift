@@ -12,7 +12,7 @@ struct discount: View {
         
             ZStack{
                 Rectangle()
-                    .frame(width: 420, height: 860, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(width: 420, height: 850, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color("Green"))
                 Spacer()
                 Spacer()
@@ -40,6 +40,11 @@ struct discount: View {
                         }
                     }
                 }
+            }
+            .tabItem{
+                Image(systemName:"star")
+                    .resizable()
+                    .frame(width: 50, height: 50)
             }
         }
     }

@@ -12,11 +12,7 @@ struct ContentView: View {
     @State var onOff = false
     
     var body: some View {
-        TabView{
-            judge()
-            discount()
-    }
-        .tabViewStyle(PageTabViewStyle())
+        Text("0")
 }
 }
 

@@ -20,35 +20,35 @@ struct judge: View {
         VStack {
             ZStack{
                 Rectangle()
-                    .frame(width: 420, height: 900, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(width: 420, height: 950, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color("Green"))
                 Rectangle()
                     .frame(width: 400, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color("Gray"))
-                    .padding(.bottom,650)
+                    .padding(.bottom,700)
                 Text("餐廳評價")
                     .foregroundColor(.black)
                     .font(.largeTitle)
-                    .padding(.bottom,650)
+                    .padding(.bottom,700)
                 Rectangle()
                     .frame(width: 280, height: 43, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color("DarkGreen"))
                     .cornerRadius(40)
-                    .padding(.bottom,500)
+                    .padding(.bottom,550)
                 Text(title)
                     .foregroundColor(.black)
                     .font(.largeTitle)
-                    .padding(.bottom,500)
+                    .padding(.bottom,550)
                 Image(img)
                     .resizable()
                     .frame(width: 400, height: 380, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding(.top,60)
+                    .padding(.bottom,30)
                 Rectangle()
                     .frame(width: 400, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color("CentorGreen"))
-                    .padding(.top,650)
+                    .padding(.top,550)
                 Stars(pointNumber: $stars, tempNumber: $tempStars)
-                .padding(.top,640)
+                .padding(.top,540)
                 HStack{
                 Image(systemName: "star")
                     .resizable()
@@ -56,9 +56,15 @@ struct judge: View {
                 Text("\(tempStars == 0 ? Float(stars) : Float(stars) + 0.5 - 1)")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 }
-                .padding(.top,790)
+                .padding(.top,690)
             }
             
+        }
+        .tabItem{
+            Image(systemName:"person")
+                .resizable()
+                .frame(width: 50, height: 50)
+                .foregroundColor(Color("Gray"))
         }
     }
 }

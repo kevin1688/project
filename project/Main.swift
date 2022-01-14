@@ -104,6 +104,12 @@ struct Main: View {
                 .padding()
             }
     }
+        .tabItem{
+            Image(systemName:"books.vertical.fill")
+                .resizable()
+                .frame(width: 50, height: 50)
+        }
+
     }
 }
 
